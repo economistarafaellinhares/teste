@@ -285,6 +285,10 @@ footer{padding-bottom:5.5rem}
 .sched .cal{margin-top:0}
 @media (min-width:760px){.sched .sched-note{margin-bottom:1.5rem}.sched h2{margin-bottom:.75rem}}
 
+/* Ajustes v11: parágrafo equilibrado em duas linhas no computador */
+.sched .sched-note{text-wrap:balance}
+@media (min-width:760px){.sched .sched-note{max-width:none;font-size:1.05rem}}
+
 /* Entrada única do topo */
 @keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .hero-grid>*{animation:in .8s ease both}.hero-grid>*:nth-child(2){animation-delay:.15s}

@@ -1,684 +1,336 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#f7f6f1">
-  <meta name="description" content="Giovanna Mayara de Oliveira - Psicologia e acolhimento.">
-  <title>Giovanna Mayara | Psicóloga</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --fundo: #f7f6f1;
-      --branco: #ffffff;
-      --verde: #718477;
-      --verde-escuro: #40584b;
-      --texto: #343b35;
-      --suave: #e9ede6;
-      --bege: #e9e3d8;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 85px;
-    }
-
-    body {
-      background: var(--fundo);
-      color: var(--texto);
-      font-family: 'DM Sans', sans-serif;
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(1100px, 90%);
-      margin: auto;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 500;
-      line-height: 1.2;
-    }
-
-    h1 {
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-    }
-
-    h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: 22px;
-    }
-
-    p {
-      font-size: 1rem;
-    }
-
-    /* MENU */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(247, 246, 241, .94);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(64, 88, 75, .10);
-    }
-
-    .navbar {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.35rem;
-      color: var(--verde-escuro);
-    }
-
-    .menu {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      list-style: none;
-    }
-
-    .menu a {
-      font-size: .9rem;
-      transition: color .2s;
-    }
-
-    .menu a:hover {
-      color: var(--verde);
-    }
-
-    .menu-btn {
-      display: none;
-      border: 0;
-      background: transparent;
-      font-size: 1.7rem;
-      color: var(--verde-escuro);
-      cursor: pointer;
-    }
-
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      background: var(--verde-escuro);
-      color: white;
-      padding: 15px 25px;
-      border-radius: 40px;
-      font-size: .93rem;
-      font-weight: 600;
-      transition: .25s;
-    }
-
-    .btn:hover {
-      background: var(--verde);
-      transform: translateY(-2px);
-    }
-
-    /* INÍCIO */
-
-    .hero {
-      padding: 85px 0;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 0.85fr;
-      gap: 75px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      color: var(--verde);
-      font-size: .8rem;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      color: var(--verde-escuro);
-      margin-bottom: 25px;
-    }
-
-    .hero-description {
-      max-width: 490px;
-      color: #667168;
-      margin-bottom: 30px;
-      font-size: 1.05rem;
-    }
-
-    .hero-photo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .hero-photo img {
-      display: block;
-      width: 100%;
-      height: auto;
-      max-height: 680px;
-      object-fit: contain;
-      border-radius: 180px 180px 20px 20px;
-    }
-
-    .photo-placeholder {
-      width: 100%;
-      min-height: 380px;
-      border-radius: 180px 180px 20px 20px;
-      background: var(--bege);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: var(--verde-escuro);
-      padding: 30px;
-    }
-
-    /* SEÇÕES */
-
-    section {
-      padding: 90px 0;
-    }
-
-    .section-light {
-      background: var(--branco);
-    }
-
-    .section-heading {
-      max-width: 680px;
-      margin-bottom: 45px;
-    }
-
-    .section-heading p {
-      color: #737c74;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      align-items: center;
-      gap: 70px;
-    }
-
-    .about-decoration {
-      background: var(--suave);
-      border-radius: 12px 140px 12px 12px;
-      min-height: 340px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--verde-escuro);
-      padding: 35px;
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.7rem;
-    }
-
-    .about-text p {
-      margin-bottom: 18px;
-      color: #667168;
-    }
-
-    /* ATENDIMENTO */
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 22px;
-    }
-
-    .service-card {
-      padding: 35px;
-      background: white;
-      border: 1px solid #e9eae4;
-      border-radius: 15px;
-      transition: .25s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(50, 70, 55, .07);
-    }
-
-    .service-number {
-      color: var(--verde);
-      font-size: .85rem;
-      letter-spacing: 2px;
-      margin-bottom: 15px;
-    }
-
-    .service-card h3 {
-      color: var(--verde-escuro);
-      font-size: 1.5rem;
-      margin-bottom: 12px;
-    }
-
-    .service-card p {
-      color: #737c74;
-    }
-
-    /* FRASE */
-
-    .quote {
-      background: var(--verde-escuro);
-      color: white;
-      text-align: center;
-      padding: 85px 20px;
-    }
-
-    .quote p {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.6rem, 4vw, 2.5rem);
-      max-width: 780px;
-      margin: auto;
-      line-height: 1.5;
-    }
-
-    /* CONTATO */
-
-    .contact {
-      text-align: center;
-    }
-
-    .contact p {
-      color: #737c74;
-      max-width: 550px;
-      margin: 0 auto 30px;
-    }
-
-    .contact .btn {
-      margin-top: 10px;
-    }
-
-    /* RODAPÉ */
-
-    footer {
-      padding: 35px 0;
-      background: #e9ede6;
-      text-align: center;
-      color: #647167;
-      font-size: .85rem;
-    }
-
-    footer p + p {
-      margin-top: 5px;
-    }
-
-    /* WHATSAPP */
-
-    .whatsapp {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      z-index: 99;
-      background: #238b5a;
-      color: white;
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.6rem;
-      box-shadow: 0 5px 20px rgba(0,0,0,.18);
-    }
-
-    /* CELULARES */
-
-    @media (max-width: 760px) {
-      .container {
-        width: 89%;
-      }
-
-      .navbar {
-        min-height: 68px;
-      }
-
-      .logo {
-        font-size: 1.15rem;
-      }
-
-      .menu-btn {
-        display: block;
-      }
-
-      .menu {
-        display: none;
-        position: absolute;
-        top: 68px;
-        left: 0;
-        width: 100%;
-        padding: 20px 6%;
-        background: var(--fundo);
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        box-shadow: 0 12px 20px rgba(0,0,0,.06);
-      }
-
-      .menu.open {
-        display: flex;
-      }
-
-      .menu li a {
-        display: block;
-        padding: 13px 0;
-        border-bottom: 1px solid #e7e8e1;
-      }
-
-      .menu .btn {
-        margin-top: 15px;
-        text-align: center;
-      }
-
-      .hero {
-        padding: 48px 0 65px;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-      }
-
-      .hero-content {
-        text-align: center;
-      }
-
-      .hero-description {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-photo {
-        width: 100%;
-        max-width: 430px;
-        margin: auto;
-      }
-
-      .hero-photo img {
-        max-height: none;
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-        border-radius: 100px 100px 15px 15px;
-      }
-
-      section {
-        padding: 65px 0;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-      .about-decoration {
-        min-height: 220px;
-      }
-
-      .services {
-        grid-template-columns: 1fr;
-        gap: 15px;
-      }
-
-      .service-card {
-        padding: 27px;
-      }
-
-      .quote {
-        padding: 65px 22px;
-      }
-
-      .whatsapp {
-        width: 54px;
-        height: 54px;
-        right: 15px;
-        bottom: 15px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *, *::before, *::after {
-        transition-duration: .01ms !important;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Giovanna Mayara de Oliveira | Psicóloga clínica – CRP 08/42913</title>
+<meta name="description" content="Psicoterapia on-line para adolescentes e adultos em todo o Brasil. Atendimento ético, baseado na análise do comportamento. Giovanna Mayara de Oliveira, psicóloga clínica CRP 08/42913.">
+<meta property="og:title" content="Giovanna Mayara de Oliveira | Psicóloga clínica">
+<meta property="og:description" content="Psicoterapia on-line para todo o Brasil.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#091B2B">
+<style>
+:root{
+  --navy:#091B2B; --navy2:#10283E; --navy3:#17344D;
+  --green:#6FB8EE; --mint:#E8F3FC; --white:#FFFFFF;
+  --text:#091B2B; --muted:#52667A; --line:#DCE5EC;
+  --r:16px; --max:1080px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;color:var(--text);background:var(--white);line-height:1.65;font-size:1rem;-webkit-text-size-adjust:100%;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:6px}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 1.25rem}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em;font-weight:600}
+h2{font-size:clamp(1.7rem,5vw,2.4rem);margin-bottom:1rem}
+h3{font-size:1.1rem;letter-spacing:-.01em}
+section{padding:4.5rem 0}
+.lead{color:var(--muted);max-width:62ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:.85rem 1.8rem;border-radius:999px;background:var(--green);color:var(--navy);font-weight:600;text-decoration:none;font-size:1rem;border:0;cursor:pointer;transition:background .25s,transform .25s}
+.btn:hover{background:#58A6E0;transform:translateY(-1px)}
+.btn.full{width:100%}
+
+/* Header */
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--navy);color:#fff}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-weight:600;text-decoration:none;font-size:.95rem;letter-spacing:.01em}
+nav ul{list-style:none;display:none;gap:1.75rem}
+nav a{text-decoration:none;font-size:.92rem;color:#C9D6E2;position:relative;padding:.3rem 0;transition:color .2s}
+nav a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--green);transition:width .25s}
+nav a:hover{color:#fff}nav a:hover::after{width:100%}
+.burger{width:48px;height:48px;background:none;border:0;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;margin-right:-10px}
+.burger span{width:24px;height:2px;background:#fff;transition:transform .25s,opacity .25s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.menu{position:fixed;top:64px;left:0;right:0;background:var(--navy);padding:.5rem 1.25rem 1.5rem;border-top:1px solid var(--navy3);transform:translateY(-120%);visibility:hidden;transition:transform .3s,visibility .3s}
+.menu.open{transform:none;visibility:visible}
+.menu a{display:block;padding:1rem 0;color:#fff;text-decoration:none;border-bottom:1px solid var(--navy3);font-size:1.05rem}
+.menu .btn{margin-top:1.25rem;border:0}
+
+/* Marca GM */
+.logo{display:inline-flex;align-items:center;gap:.75rem;text-decoration:none;color:#fff}
+.gm{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;border:1.5px solid var(--green);color:var(--green);font-weight:700;font-size:1.05rem;letter-spacing:.02em;flex:none}
+.gm.lg{width:72px;height:72px;border-radius:20px;font-size:1.9rem;border-width:2px;margin-bottom:1.5rem}
+.logo small{display:none;font-size:.82rem;color:#C9D6E2;font-weight:400;line-height:1.25}
+.logo b{display:block;color:#fff;font-weight:600;font-size:.92rem}
+/* WhatsApp flutuante */
+.wpp{position:fixed;right:max(1rem,env(safe-area-inset-right));bottom:max(1rem,env(safe-area-inset-bottom));z-index:60;width:60px;height:60px;border-radius:50%;background:var(--green);color:var(--navy);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(9,27,43,.28);transition:transform .25s,background .25s}
+.wpp:hover{transform:scale(1.07);background:#58A6E0}
+.wpp svg{width:30px;height:30px}
+/* Agendamento */
+.sched .lead{margin-bottom:1.75rem}
+.cal{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;min-height:200px;background:var(--white)}
+.cal iframe{display:block;width:100%;height:700px;border:0}
+.cal-empty{padding:2.5rem 1.5rem;text-align:center;color:var(--muted)}
+.cal-empty .btn{margin-top:1.25rem}
+
+/* Hero */
+.hero{padding:calc(64px + 2.5rem) 0 3.5rem}
+.hero-grid{display:grid;gap:2.5rem;align-items:center}
+.hero h1{font-size:clamp(2.1rem,8vw,3.5rem);margin-bottom:1rem}
+.hero p.lead{font-size:1.1rem;margin-bottom:1.75rem}
+.crp{margin-top:1.25rem;font-size:.9rem;color:var(--muted)}
+.photo{background:var(--mint);border-radius:var(--r);display:flex;align-items:center;justify-content:center;min-height:300px;overflow:hidden}
+.photo img{width:100%;height:auto;max-height:620px;object-fit:contain}
+.mono{display:none;width:140px;height:140px;border-radius:32px;background:var(--navy);color:var(--green);align-items:center;justify-content:center;font-size:3.4rem;font-weight:700;letter-spacing:.02em}
+.photo.nophoto img{display:none}.photo.nophoto .mono{display:flex}
+
+/* Sobre */
+.about{background:var(--mint)}
+.about-grid{display:grid;gap:1.25rem}
+.about p{margin-bottom:1rem}
+.facts{display:grid;gap:.9rem}
+.card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:1.5rem}
+.card p{color:var(--muted);font-size:.97rem;margin:.4rem 0 0}
+
+/* Atuação */
+.cards{display:grid;gap:1rem;margin-top:2rem}
+.card .btn{margin-top:1.25rem}
+.tag{display:inline-block;font-size:.85rem;color:var(--navy);background:var(--mint);padding:.25rem .8rem;border-radius:999px;margin-bottom:.8rem}
+
+/* Abordagem */
+.approach{background:var(--navy);color:#fff}
+.approach .lead{color:#B8C7D6}
+.approach h2{color:#fff}
+.pillars{display:grid;gap:1rem;margin-top:2rem}
+.pillar{background:var(--navy2);border:1px solid var(--navy3);border-radius:var(--r);padding:1.5rem}
+.pillar p{color:#B8C7D6;font-size:.97rem;margin-top:.4rem}
+.pillar h3{color:var(--green)}
+
+/* FAQ */
+.faq{margin-top:2rem;display:grid;gap:.75rem}
+details{border:1px solid var(--line);border-radius:var(--r);padding:0 1.25rem;transition:border-color .2s}
+details[open]{border-color:var(--green)}
+summary{cursor:pointer;list-style:none;min-height:56px;display:flex;align-items:center;justify-content:space-between;gap:1rem;font-weight:600}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.5rem;color:var(--green);transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 1.25rem;color:var(--muted)}
+
+/* Contato */
+.contact{background:var(--mint);text-align:center}
+.contact .lead{margin:0 auto 1.75rem}
+.contact .btn{width:100%;max-width:360px}
+
+/* Footer */
+footer{background:var(--navy);color:#C9D6E2;padding:3rem 0 2rem;font-size:.92rem}
+.foot{display:grid;gap:1.75rem}
+footer strong{color:#fff;font-weight:600;font-size:1rem}
+footer ul{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem 1.4rem}
+footer a{text-decoration:none}footer a:hover{color:var(--green)}
+.copy{margin-top:2rem;padding-top:1.25rem;border-top:1px solid var(--navy3);font-size:.85rem;color:#8FA3B7}
+
+/* Ajustes v3: credibilidade + mobile */
+section{padding:3.25rem 0}
+.narrow{max-width:760px}
+.alt{background:var(--mint)}
+.hero{padding:calc(64px + 2rem) 0 2.5rem}
+.hero h1{font-size:clamp(1.9rem,8.5vw,3.2rem);margin-bottom:.6rem}
+.insc{font-size:1.02rem;font-weight:600;color:var(--navy);line-height:1.5;padding-left:.9rem;border-left:3px solid var(--green);margin-bottom:1.5rem}
+.hero h2.sub{font-size:clamp(1.15rem,4.6vw,1.5rem);font-weight:400;color:var(--muted);letter-spacing:-.01em;margin:0 0 1.75rem;max-width:30ch}
+.hero .btn.full{width:100%}
+.lead{font-size:1.08rem;line-height:1.75;color:var(--navy3)}
+.tap{display:flex;align-items:center;justify-content:space-between;min-height:76px;text-decoration:none;transition:border-color .2s,transform .2s}
+.tap:hover{border-color:var(--green);transform:translateY(-1px)}
+.go{font-size:1.8rem;color:var(--green);line-height:1}
+summary{padding:.6rem 0;font-size:1.02rem;min-height:60px}
+details p+p{margin-top:-.5rem}
+.faqbtn{margin-top:1.75rem}
+.logo small{display:none}
+.contact{padding-bottom:4.5rem}
+footer{padding-bottom:5.5rem}
+.cal iframe{height:640px}
+@media (min-width:760px){
+  section{padding:6rem 0}
+  .hero{padding-top:calc(64px + 4rem)}
+  .hero .btn.full{width:auto}
+  .logo small{display:block}
+  .cal iframe{height:700px}
+  .faqbtn{width:auto}
+}
+
+/* Ajustes v4: foto à direita + destaque do H2 */
+.hero-grid{grid-template-columns:1.15fr .85fr;gap:1.25rem;align-items:center}
+.hero h1{font-size:clamp(1.45rem,6.2vw,3rem)}
+.hero .gm.lg{width:56px;height:56px;font-size:1.45rem;border-radius:16px;margin-bottom:1.1rem}
+.hero .btn.full{width:100%;padding:.8rem 1rem}
+.photo{min-height:0;align-self:center}
+.photo img{max-height:560px}
+.mono{width:90px;height:90px;font-size:2.2rem;border-radius:24px;margin:2rem 0}
+.destaque h2{font-size:clamp(2rem,8vw,3.6rem);line-height:1.1;max-width:18ch;margin-bottom:2.25rem}
+.destaque h3{font-size:1.15rem;margin-bottom:.75rem;padding-left:.9rem;border-left:3px solid var(--green)}
+@media (min-width:760px){
+  .hero-grid{grid-template-columns:1.2fr .8fr;gap:4rem}
+  .hero .gm.lg{width:72px;height:72px;font-size:1.9rem;border-radius:20px}
+  .hero .btn.full{width:auto;padding:.85rem 1.8rem}
+  .photo img{max-height:620px}
+}
+
+/* Ajustes v5: nome em destaque */
+.hero h1{font-size:clamp(1.5rem,6.6vw,3.4rem);font-weight:800;text-transform:uppercase;letter-spacing:.01em;line-height:1.08;margin-bottom:.9rem}
+.destaque h2{font-size:clamp(1.4rem,5.4vw,2.5rem);max-width:24ch;margin-bottom:1.75rem}
+.photo img{width:auto;max-width:100%;height:auto;margin:0 auto}
+@media (min-width:760px){.hero h1{font-size:clamp(2.6rem,4.6vw,3.6rem)}.destaque h2{font-size:2.5rem}}
+
+/* Entrada única do topo */
+@keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero-grid>*{animation:in .8s ease both}.hero-grid>*:nth-child(2){animation-delay:.15s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+@media (min-width:760px){
+  section{padding:6rem 0}
+  nav ul{display:flex}.burger,.menu{display:none}
+  .hero{padding-top:calc(64px + 4rem)}
+  .logo small{display:block}
+  .hero-grid{grid-template-columns:1.1fr .9fr;gap:4rem}
+  .about-grid{grid-template-columns:1.2fr 1fr;gap:3.5rem}
+  .cards{grid-template-columns:1fr 1fr}
+  .pillars{grid-template-columns:repeat(3,1fr)}
+  .foot{grid-template-columns:1.2fr 1fr;align-items:start}
+  .btn.full{width:auto}
+}
+</style>
 </head>
-
 <body>
 
-  <header>
-    <div class="container navbar">
-      <a href="#inicio" class="logo">Giovanna Mayara</a>
-
-      <button class="menu-btn" id="menuBtn"
-        aria-label="Abrir menu" aria-expanded="false"
-        aria-controls="menu">☰</button>
-
-      <ul class="menu" id="menu">
-        <li><a href="#inicio">Início</a></li>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#inicio" aria-label="GM – Giovanna Mayara de Oliveira, página inicial"><span class="gm" aria-hidden="true">GM</span><small><b>Giovanna Mayara de Oliveira</b>Psicóloga clínica · CRP 08/42913</small></a>
+    <nav aria-label="Navegação principal">
+      <ul>
         <li><a href="#sobre">Sobre mim</a></li>
-        <li><a href="#atendimento">Atendimento</a></li>
+        <li><a href="#abordagem">Abordagem</a></li>
+        <li><a href="#duvidas">Dúvidas</a></li>
+        <li><a href="#agendar">Agendar</a></li>
         <li><a href="#contato">Contato</a></li>
-        <li><a href="#contato" class="btn">Agendar conversa</a></li>
+      </ul>
+    </nav>
+    <button class="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="menu" id="menu">
+    <a href="#sobre">Sobre mim</a>
+    <a href="#abordagem">Abordagem</a>
+    <a href="#duvidas">Dúvidas frequentes</a>
+    <a href="#contato">Contato</a>
+    <a class="btn" href="#agendar">Agendar</a>
+  </div>
+</header>
+
+<main id="inicio">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Giovanna Mayara de Oliveira</h1>
+      <p class="insc">Psicóloga clínica<br>CRP 08/42913</p>
+      <a class="btn full" href="#agendar">Agendar</a>
+    </div>
+    <!-- Para usar sua foto: salve o arquivo como "foto-giovanna.jpg" na mesma pasta do index.html.
+         A imagem é exibida inteira, sem cortes (object-fit: contain). -->
+    <div class="photo" id="photo">
+      <img src="foto-giovanna.jpg" alt="Giovanna Mayara de Oliveira, psicóloga clínica" width="800" height="1000" fetchpriority="high">
+      <div class="mono" aria-hidden="true">GM</div>
+    </div>
+  </div>
+</section>
+
+<section class="about alt destaque" id="sobre">
+  <div class="wrap">
+    <h2>Serviço de psicoterapia on-line para todo o Brasil</h2>
+    <div class="narrow">
+      <h3>Sobre mim e meu trabalho</h3>
+      <p class="lead">Formada em psicologia pela PUCPR. Atuo dedicada em ofertar um espaço de acolhimento, e promover saúde mental e qualidade de vida a todos os nossos clientes.</p>
+    </div>
+  </div>
+</section>
+
+<section id="abordagem">
+  <div class="wrap narrow">
+    <h2>Abordagem terapêutica</h2>
+    <p class="lead">Respaldada pela análise do comportamento, proporciono um atendimento ético, com foco no seu crescimento pessoal/profissional e na sua qualidade de vida.</p>
+  </div>
+</section>
+
+<section class="alt" id="duvidas">
+  <div class="wrap narrow">
+    <h2>Dúvidas frequentes</h2>
+    <div class="faq">
+      <details><summary>O atendimento online é seguro?</summary><p>As sessões ocorrem por plataformas de vídeo que garantem total sigilo atendendo as regulamentações apresentadas pelo Conselho Federal de Psicologia.</p></details>
+      <details><summary>Como devo me preparar para o atendimento online?</summary><p>Certificar-se de estar em um local apropriado, tranquilo, sigiloso e sem interrupções. Recomenda-se uso de fones de ouvido.</p></details>
+      <details><summary>Informações gerais</summary><p>Na primeira sessão, vamos conversar para compreender os motivos que te levaram para a terapia, irei explicar como posso ajudá-lo, e como irá funcionar o processo.</p><p>As sessões ocorrem uma vez na semana ou a cada 15 dias conforme avaliação da psicóloga e tem duração de aproximadamente 50 minutos.</p></details>
+    </div>
+    <a class="btn full faqbtn" href="#agendar">Agendar</a>
+  </div>
+</section>
+
+<section class="sched" id="agendar">
+  <div class="wrap">
+    <h2>Agendar</h2>
+    <!-- CALENDLY: cole o link do seu calendário na constante CALENDLY_URL, no final deste arquivo.
+         Exemplo: https://calendly.com/seu-usuario/sessao -->
+    <div class="cal" id="calendly"></div>
+  </div>
+</section>
+
+<section class="contact" id="contato">
+  <div class="wrap">
+    <h2>Contato</h2>
+    <a class="btn" href="https://wa.me/qr/HJ52LVUAXB6EF1" target="_blank" rel="noopener">Entrar em contato</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <span class="gm" aria-hidden="true" style="margin-bottom:1rem">GM</span><br><strong>Giovanna Mayara de Oliveira</strong>
+        <p>Psicóloga clínica · CRP 08/42913<br>Serviço de psicoterapia on-line para todo o Brasil</p>
+        <!-- Redes sociais: adicione aqui os links, se desejar. -->
+      </div>
+      <ul>
+        <li><a href="#sobre">Sobre mim</a></li>
+        <li><a href="#abordagem">Abordagem</a></li>
+        <li><a href="#duvidas">Dúvidas</a></li>
+        <li><a href="#agendar">Agendar</a></li>
+        <li><a href="#contato">Contato</a></li>
       </ul>
     </div>
-  </header>
+    <p class="copy">© <span id="ano">2026</span> Giovanna Mayara de Oliveira. Todos os direitos reservados.</p>
+  </div>
+</footer>
 
-  <main>
+<a class="wpp" href="https://wa.me/qr/HJ52LVUAXB6EF1" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+</a>
 
-    <!-- INÍCIO -->
-    <section class="hero" id="inicio">
-      <div class="container hero-grid">
-
-        <div class="hero-content">
-          <div class="eyebrow">Psicologia e acolhimento</div>
-
-          <h1>Um espaço para cuidar de você.</h1>
-
-          <p class="hero-description">
-            Um convite para olhar para si com mais atenção,
-            acolhimento e respeito à sua própria história.
-          </p>
-
-          <a href="#contato" class="btn">
-            Conheça meu atendimento
-          </a>
-        </div>
-
-        <div class="hero-photo">
-          <!-- Coloque a fotografia original nesta pasta
-               com o nome foto-giovanna.jpg.
-               A imagem mantém sua proporção natural. -->
-          <img
-            src="foto-giovanna.jpg"
-            alt="Giovanna Mayara de Oliveira"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-
-          <div class="photo-placeholder" style="display:none">
-            Adicione aqui a fotografia original da Giovanna.
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SOBRE -->
-    <section class="section-light" id="sobre">
-      <div class="container about-grid">
-
-        <div class="about-decoration">
-          Cuidar de si também é um caminho.
-        </div>
-
-        <div class="about-text">
-          <div class="eyebrow">Um pouco sobre mim</div>
-
-          <h2>Olá, sou Giovanna Mayara.</h2>
-
-          <p>
-            Sou Giovanna Mayara de Oliveira.
-            Este espaço foi pensado para apresentar meu trabalho
-            e compartilhar informações sobre o atendimento psicológico.
-          </p>
-
-          <p>
-            Aqui você poderá conhecer minha trajetória, minha formação
-            e a maneira como conduzo o trabalho clínico.
-          </p>
-
-          <!-- Substitua pelos dados reais da profissional. -->
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ATENDIMENTO -->
-    <section id="atendimento">
-      <div class="container">
-
-        <div class="section-heading">
-          <div class="eyebrow">Como posso ajudar</div>
-          <h2>Conheça as possibilidades de atendimento.</h2>
-          <p>
-            Informações sobre as modalidades de atendimento
-            e os serviços oferecidos.
-          </p>
-        </div>
-
-        <div class="services">
-
-          <article class="service-card">
-            <div class="service-number">01 — ATENDIMENTO</div>
-            <h3>Psicoterapia</h3>
-            <p>
-              Inclua aqui a descrição da modalidade de psicoterapia,
-              seu público e as informações correspondentes.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-number">02 — MODALIDADE</div>
-            <h3>Atendimento online</h3>
-            <p>
-              Inclua aqui as informações sobre disponibilidade,
-              formato e condições do atendimento online, caso oferecido.
-            </p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- MENSAGEM -->
-    <div class="quote">
-      <p>
-        “Respeitar sua história é também permitir-se construir
-        novos caminhos.”
-      </p>
-    </div>
-
-    <!-- CONTATO -->
-    <section class="section-light contact" id="contato">
-      <div class="container">
-
-        <div class="eyebrow">Vamos conversar?</div>
-
-        <h2>Seu primeiro passo pode começar aqui.</h2>
-
-        <p>
-          Entre em contato para obter informações sobre o atendimento
-          e verificar a disponibilidade de horários.
-        </p>
-
-        <!-- Substitua pelo WhatsApp profissional -->
-        <a
-          href="https://wa.me/55SEUNUMERO"
-          class="btn"
-          target="_blank"
-          rel="noopener noreferrer">
-          Entrar em contato pelo WhatsApp
-        </a>
-
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="container">
-      <p><strong>Giovanna Mayara de Oliveira</strong></p>
-      <p>Psicologia</p>
-      <p>© <span id="year"></span> Todos os direitos reservados.</p>
-    </div>
-  </footer>
-
-  <!-- BOTÃO FLUTUANTE -->
-  <a
-    href="https://wa.me/55SEUNUMERO"
-    class="whatsapp"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Entrar em contato pelo WhatsApp">
-    ☎
-  </a>
-
-  <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const menu = document.getElementById('menu');
-
-    menuBtn.addEventListener('click', () => {
-      const aberto = menu.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', aberto);
-      menuBtn.setAttribute(
-        'aria-label',
-        aberto ? 'Fechar menu' : 'Abrir menu'
-      );
-      menuBtn.textContent = aberto ? '×' : '☰';
-    });
-
-    document.querySelectorAll('#menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.remove('open');
-        menuBtn.setAttribute('aria-expanded', 'false');
-        menuBtn.setAttribute('aria-label', 'Abrir menu');
-        menuBtn.textContent = '☰';
-      });
-    });
-
-    document.getElementById('year').textContent =
-      new Date().getFullYear();
-  </script>
-
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Psychologist","name":"Giovanna Mayara de Oliveira","description":"Psicóloga clínica, CRP 08/42913. Psicoterapia on-line para adolescentes e adultos em todo o Brasil.","areaServed":"BR","url":"https://wa.me/qr/HJ52LVUAXB6EF1"}
+</script>
+<script>
+(function(){
+  var b=document.querySelector('.burger'),m=document.getElementById('menu');
+  function set(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Fechar menu':'Abrir menu')}
+  b.addEventListener('click',function(){set(!m.classList.contains('open'))});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){set(false)})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
+  var img=document.querySelector('#photo img'),box=document.getElementById('photo');
+  function miss(){box.classList.add('nophoto')}
+  img.addEventListener('error',miss);
+  if(img.complete&&img.naturalWidth===0)miss();
+  var CALENDLY_URL=""; // ← cole aqui o link do Calendly, ex.: "https://calendly.com/seu-usuario/sessao"
+  var cal=document.getElementById('calendly');
+  if(CALENDLY_URL){
+    var f=document.createElement('iframe');
+    f.src=CALENDLY_URL+(CALENDLY_URL.indexOf('?')>-1?'&':'?')+'hide_gdpr_banner=1&primary_color=6fb8ee&text_color=091b2b';
+    f.title='Agendamento de sessão';f.loading='lazy';cal.appendChild(f);
+  }else{
+    cal.innerHTML='<div class="cal-empty"><p>O calendário de agendamento será exibido aqui.<br>Enquanto isso, agende pelo WhatsApp.</p><a class="btn" href="https://wa.me/qr/HJ52LVUAXB6EF1" target="_blank" rel="noopener">Agendar pelo WhatsApp</a></div>';
+  }
+  document.getElementById('ano').textContent=new Date().getFullYear();
+})();
+</script>
 </body>
 </html>

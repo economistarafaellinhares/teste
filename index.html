@@ -216,7 +216,7 @@ footer{padding-bottom:5.5rem}
 .mc-title{font-size:1.1rem;font-weight:600;margin-bottom:1rem}
 .mc-body{display:grid;gap:1.5rem}
 .mc-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem}
-.mc-head strong{text-transform:capitalize;font-weight:600}
+.mc-head strong{font-weight:600}.mc-head strong::first-letter{text-transform:uppercase}
 .mc-nav{width:44px;height:44px;border-radius:50%;border:0;background:var(--mint);color:var(--navy);font-size:1.3rem;cursor:pointer}
 .mc-nav:disabled{opacity:.35;cursor:default}
 .mc-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
@@ -288,6 +288,45 @@ footer{padding-bottom:5.5rem}
 /* Ajustes v11: parágrafo equilibrado em duas linhas no computador */
 .sched .sched-note{text-wrap:balance}
 @media (min-width:760px){.sched .sched-note{max-width:none;font-size:1.05rem}}
+
+/* Ajustes v12: título, parágrafo e calendário na mesma coluna */
+.sched .wrap{max-width:calc(720px + 2.5rem)}
+.sched .cal{max-width:none;margin:0}
+.sched h2{margin-bottom:.8rem}
+.sched .sched-note{margin:0 0 1.5rem}
+@media (min-width:760px){.sched .sched-note{margin-bottom:1.75rem}}
+
+/* Ajustes v13: parágrafo em duas linhas na largura do calendário */
+@media (min-width:760px){.sched .sched-note{font-size:.92rem;line-height:1.7;max-width:none}}
+
+/* Ajustes v14: espaço entre o parágrafo e o calendário */
+.sched .sched-note{margin-bottom:2rem}
+@media (min-width:760px){.sched .sched-note{margin-bottom:2.25rem}}
+
+/* Ajustes v15: Agendamento alinhado à esquerda como a seção "Serviço de..." */
+.sched .wrap{max-width:var(--max)}
+.sched .cal{max-width:720px;margin:0}
+.sched .sched-note{max-width:720px;margin-left:0;margin-right:0}
+@media (min-width:760px){.sched .sched-note{max-width:720px}}
+
+/* Ajustes v16: calendário centralizado */
+.sched .cal{margin:0 auto}
+
+/* Ajustes v17: mesmo espaço entre título e conteúdo em todas as seções */
+#sobre h2,#duvidas h2,#agendar h2{margin-bottom:2.5rem}
+#duvidas .faq{margin-top:0}
+
+/* Ajustes v18: mesmo espaço (2.5rem) entre o parágrafo e o calendário */
+#agendar .sched-note{margin-bottom:2.5rem}
+
+/* Ajustes v19: cards no celular e "Primeira sessão?" recolhido */
+#agendar .sched-note{max-width:720px;margin:0 auto 2.5rem;background:var(--white)}
+#agendar .sched-note p{font-size:.95rem;line-height:1.7;text-wrap:pretty}
+@media (max-width:759px){
+  .destaque .narrow{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:1.4rem 1.25rem 1.5rem}
+  .destaque .sub2{margin-top:1rem}
+  .destaque h3{margin-bottom:.7rem}
+}
 
 /* Entrada única do topo */
 @keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
@@ -378,7 +417,7 @@ footer{padding-bottom:5.5rem}
 <section class="sched alt" id="agendar">
   <div class="wrap">
     <h2>Agendamento</h2>
-    <p class="lead sched-note">Se for a sua primeira sessão, entrarei em contato assim que receber o agendamento para informar o valor da sessão e confirmar sua participação. Se preferir, <a href="https://wa.me/qr/HJ52LVUAXB6EF1" target="_blank" rel="noopener">fale comigo pelo WhatsApp</a>.</p>
+    <details class="sched-note"><summary>Primeira sessão?</summary><p>Se for a sua primeira sessão, entrarei em contato assim que receber o agendamento para informar o valor da sessão e confirmar sua participação. Se preferir, <a href="https://wa.me/qr/HJ52LVUAXB6EF1" target="_blank" rel="noopener">fale comigo pelo WhatsApp</a>.</p></details>
     <!-- CALENDLY: cole o link do seu calendário na constante CALENDLY_URL, no final deste arquivo.
          Exemplo: https://calendly.com/seu-usuario/sessao -->
     <div class="cal" id="calendly"></div>

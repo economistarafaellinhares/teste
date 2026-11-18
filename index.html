@@ -250,6 +250,29 @@ footer{padding-bottom:5.5rem}
   .mc-body.two{grid-template-columns:1fr 170px}
 }
 
+/* Ajustes v8: espaçamento, rodapé 2 colunas, calendário compacto */
+.destaque h2{margin-bottom:3rem}
+.destaque h3{margin-bottom:.9rem}
+.destaque .sub2{margin-top:2.75rem}
+.destaque .lead{margin:0}
+.cal{max-width:700px;margin:0 auto}
+.mc-side{padding:1.25rem}
+.mc-side h3{font-size:1.1rem}
+.mc-main{padding:1.25rem}
+.mc-title{font-size:1rem;margin-bottom:.75rem}
+.mc-day{min-height:36px;font-size:.88rem}
+.mc-nav{width:38px;height:38px;font-size:1.15rem}
+.mc-t{min-height:42px;font-size:.92rem}
+@media (min-width:760px){
+  .destaque h2{margin-bottom:4rem}
+  .destaque .sub2{margin-top:3.25rem}
+  .foot{grid-template-columns:1.4fr 1fr}
+  .mc{grid-template-columns:210px 1fr}
+  .mc-side{padding:1.5rem}
+  .mc-main{padding:1.5rem}
+  .mc-body.two{grid-template-columns:1fr 130px}
+}
+
 /* Entrada única do topo */
 @keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .hero-grid>*{animation:in .8s ease both}.hero-grid>*:nth-child(2){animation-delay:.15s}
@@ -318,17 +341,14 @@ footer{padding-bottom:5.5rem}
       <h3>Sobre mim e meu trabalho</h3>
       <p class="lead">Formada em psicologia pela PUCPR. Atuo dedicada em ofertar um espaço de acolhimento, e promover saúde mental e qualidade de vida a todos os nossos clientes.</p>
     </div>
+    <div class="narrow sub2" id="abordagem">
+      <h3>Abordagem terapêutica</h3>
+      <p class="lead">Respaldada pela análise do comportamento, proporciono um atendimento ético, com foco no seu crescimento pessoal/profissional e na sua qualidade de vida.</p>
+    </div>
   </div>
 </section>
 
-<section id="abordagem">
-  <div class="wrap narrow">
-    <h2>Abordagem terapêutica</h2>
-    <p class="lead">Respaldada pela análise do comportamento, proporciono um atendimento ético, com foco no seu crescimento pessoal/profissional e na sua qualidade de vida.</p>
-  </div>
-</section>
-
-<section class="alt" id="duvidas">
+<section id="duvidas">
   <div class="wrap narrow">
     <h2>Dúvidas frequentes</h2>
     <div class="faq">
@@ -339,7 +359,7 @@ footer{padding-bottom:5.5rem}
   </div>
 </section>
 
-<section class="sched" id="agendar">
+<section class="sched alt" id="agendar">
   <div class="wrap">
     <h2>Agendamento</h2>
     <!-- CALENDLY: cole o link do seu calendário na constante CALENDLY_URL, no final deste arquivo.
@@ -366,15 +386,6 @@ footer{padding-bottom:5.5rem}
           <li><a href="tel:+5500000000000"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>(00) 00000-0000</span></a></li>
           <li><a href="https://www.instagram.com/SEU_PERFIL" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".6" fill="currentColor"/></svg><span>Instagram</span></a></li>
           <li><a href="https://www.linkedin.com/in/SEU_PERFIL" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M12 17v-7M12 13a3 3 0 0 1 6 0v4"/><circle cx="8" cy="7" r=".6" fill="currentColor"/></svg><span>LinkedIn</span></a></li>
-        </ul>
-      </div>
-      <div>
-        <strong>Navegação</strong>
-        <ul class="clist">
-          <li><a href="#sobre">Sobre mim</a></li>
-          <li><a href="#abordagem">Abordagem</a></li>
-          <li><a href="#duvidas">Dúvidas</a></li>
-          <li><a href="#agendar">Agendamento</a></li>
         </ul>
       </div>
     </div>

@@ -201,6 +201,55 @@ footer{padding-bottom:5.5rem}
   .foot{grid-template-columns:1.3fr 1fr 1fr;gap:2.5rem}
 }
 
+/* Ajustes v7: rodapé 3 colunas, ícones, calendário simulado */
+.clist a{display:inline-flex;align-items:center;gap:.7rem;min-height:40px}
+.ic{width:20px;height:20px;flex:none;color:var(--green)}
+@media (min-width:760px){.foot{grid-template-columns:repeat(3,1fr);gap:2.5rem;align-items:start}}
+.cal{border-radius:20px}
+.mc{display:grid;grid-template-columns:1fr}
+.mc-side{padding:1.5rem;border-bottom:1px solid var(--line)}
+.mc-side .gm{width:40px;height:40px;margin-bottom:.9rem}
+.mc-n{color:var(--muted);font-size:.92rem}
+.mc-side h3{font-size:1.25rem;margin:.2rem 0 .9rem}
+.mc-side ul{list-style:none;display:grid;gap:.4rem;color:var(--muted);font-size:.93rem}
+.mc-main{padding:1.5rem}
+.mc-title{font-size:1.1rem;font-weight:600;margin-bottom:1rem}
+.mc-body{display:grid;gap:1.5rem}
+.mc-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem}
+.mc-head strong{text-transform:capitalize;font-weight:600}
+.mc-nav{width:44px;height:44px;border-radius:50%;border:0;background:var(--mint);color:var(--navy);font-size:1.3rem;cursor:pointer}
+.mc-nav:disabled{opacity:.35;cursor:default}
+.mc-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.mc-wd{font-size:.72rem;color:var(--muted);text-transform:uppercase;padding:.3rem 0}
+.mc-day{aspect-ratio:1;min-height:42px;border:0;border-radius:50%;background:none;font:inherit;font-size:.95rem;color:#B3C0CC;cursor:default;position:relative}
+.mc-day.av{background:var(--mint);color:var(--navy);font-weight:600;cursor:pointer}
+.mc-day.av:hover{background:#cdf1e6}
+.mc-day.on{background:var(--navy);color:#fff}
+.mc-day.today::after{content:"";position:absolute;bottom:6px;left:50%;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--green)}
+.mc-tz{margin-top:1rem;font-size:.82rem;color:var(--muted)}
+.mc-slots h4{font-size:.98rem;font-weight:600;margin-bottom:.75rem;text-transform:capitalize}
+.mc-slots{display:grid;gap:.6rem;align-content:start}
+.mc-t{min-height:48px;border:1.5px solid var(--green);border-radius:10px;background:var(--white);color:var(--navy);font:inherit;font-weight:600;cursor:pointer;transition:background .2s,color .2s}
+.mc-t:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.mc-f{display:grid;gap:1rem;max-width:460px}
+.mc-f label{display:grid;gap:.35rem;font-size:.92rem;font-weight:600}
+.mc-f input[type=text],.mc-f input[type=email]{min-height:48px;padding:0 .9rem;border:1.5px solid var(--line);border-radius:10px;font:inherit;color:var(--navy)}
+.mc-f input:focus{outline:3px solid var(--green);outline-offset:1px;border-color:var(--green)}
+.mc-r{display:flex;gap:.6rem;flex-wrap:wrap}
+.mc-r label{display:flex;align-items:center;gap:.5rem;font-weight:400;border:1.5px solid var(--line);border-radius:10px;padding:.7rem 1rem;min-height:48px;cursor:pointer}
+.mc-r input{accent-color:#19C995;width:18px;height:18px}
+.mc-err{color:#B3261E;font-size:.88rem;min-height:1.2em}
+.mc-link{background:none;border:0;color:var(--muted);font:inherit;text-decoration:underline;cursor:pointer;min-height:44px;justify-self:start}
+.mc-ok h3{font-size:1.3rem;margin-bottom:.6rem}
+.mc-ok p{color:var(--muted)}
+.mc-demo{margin-top:1.25rem;font-size:.82rem;color:var(--muted);border-top:1px dashed var(--line);padding-top:.9rem}
+@media (min-width:760px){
+  .mc{grid-template-columns:260px 1fr}
+  .mc-side{border-bottom:0;border-right:1px solid var(--line);padding:2rem}
+  .mc-main{padding:2rem}
+  .mc-body.two{grid-template-columns:1fr 170px}
+}
+
 /* Entrada única do topo */
 @keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .hero-grid>*{animation:in .8s ease both}.hero-grid>*:nth-child(2){animation-delay:.15s}
@@ -308,16 +357,15 @@ footer{padding-bottom:5.5rem}
         <span class="gm" aria-hidden="true" style="margin-bottom:1rem">GM</span><br>
         <strong>Giovanna Mayara de Oliveira</strong>
         <p>Psicóloga clínica · CRP 08/42913<br>Serviço de psicoterapia on-line para todo o Brasil</p>
-        <a class="btn" href="https://wa.me/qr/HJ52LVUAXB6EF1" target="_blank" rel="noopener" style="margin-top:1.25rem">Entrar em contato</a>
       </div>
       <div>
         <strong>Contato</strong>
         <!-- EDITE: troque e-mail, telefone e redes sociais pelos dados reais. Apague a linha que não for usar. -->
         <ul class="clist">
-          <li><a href="mailto:seu-email@exemplo.com">seu-email@exemplo.com</a></li>
-          <li><a href="tel:+5500000000000">(00) 00000-0000</a></li>
-          <li><a href="https://www.instagram.com/SEU_PERFIL" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href="https://www.linkedin.com/in/SEU_PERFIL" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="mailto:seu-email@exemplo.com"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>seu-email@exemplo.com</span></a></li>
+          <li><a href="tel:+5500000000000"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>(00) 00000-0000</span></a></li>
+          <li><a href="https://www.instagram.com/SEU_PERFIL" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".6" fill="currentColor"/></svg><span>Instagram</span></a></li>
+          <li><a href="https://www.linkedin.com/in/SEU_PERFIL" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M12 17v-7M12 13a3 3 0 0 1 6 0v4"/><circle cx="8" cy="7" r=".6" fill="currentColor"/></svg><span>LinkedIn</span></a></li>
         </ul>
       </div>
       <div>
@@ -352,15 +400,61 @@ footer{padding-bottom:5.5rem}
   function miss(){box.classList.add('nophoto')}
   img.addEventListener('error',miss);
   if(img.complete&&img.naturalWidth===0)miss();
+  function mockCalendar(root){
+    var M=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+    var D=['domingo','segunda-feira','terça-feira','quarta-feira','quinta-feira','sexta-feira','sábado'];
+    var T=['08:00','09:00','10:00','11:00','14:00','15:00','16:00','17:00'];
+    var now=new Date();now.setHours(0,0,0,0);
+    var max=new Date(now);max.setDate(max.getDate()+60);
+    var st={y:now.getFullYear(),m:now.getMonth(),d:null,step:0,t:null,tipo:'Adulto',nome:'',email:'',err:''};
+    function ok(dt){var w=dt.getDay();return dt>now&&dt<=max&&w>0&&w<6}
+    function slots(dt){return T.filter(function(_,i){return (dt.getDate()+i)%4!==0})}
+    function label(dt){return D[dt.getDay()]+', '+dt.getDate()+' de '+M[dt.getMonth()]}
+    function side(){return '<div class="mc-side"><span class="gm" aria-hidden="true">GM</span><p class="mc-n">Giovanna Mayara de Oliveira</p><h3>Sessão de psicoterapia</h3><ul><li>Duração: 50 min</li><li>Videochamada (on-line)</li>'+(st.d&&st.step>0?'<li><b>'+label(st.d)+', '+st.t+'</b></li>':'')+'</ul></div>'}
+    function cal(){
+      var first=new Date(st.y,st.m,1),n=new Date(st.y,st.m+1,0).getDate(),h='';
+      var wd=['D','S','T','Q','Q','S','S'].map(function(x){return '<div class="mc-wd">'+x+'</div>'}).join('');
+      for(var i=0;i<first.getDay();i++)h+='<span></span>';
+      for(var d=1;d<=n;d++){
+        var dt=new Date(st.y,st.m,d),av=ok(dt),on=st.d&&st.d.getTime()===dt.getTime(),td=dt.getTime()===now.getTime();
+        h+='<button class="mc-day'+(av?' av':'')+(on?' on':'')+(td?' today':'')+'" '+(av?'data-a="day" data-v="'+d+'"':'disabled')+' aria-label="'+d+' de '+M[st.m]+(av?'':' indisponível')+'">'+d+'</button>';
+      }
+      var prevOff=(st.y===now.getFullYear()&&st.m<=now.getMonth());
+      return '<div><div class="mc-head"><button class="mc-nav" data-a="prev" aria-label="Mês anterior"'+(prevOff?' disabled':'')+'>‹</button><strong>'+M[st.m]+' de '+st.y+'</strong><button class="mc-nav" data-a="next" aria-label="Próximo mês">›</button></div><div class="mc-grid">'+wd+h+'</div><p class="mc-tz">Fuso horário: Brasília (GMT−3)</p></div>';
+    }
+    function draw(){
+      var body='';
+      if(st.step===0){
+        body='<p class="mc-title">Selecione a data e o horário</p><div class="mc-body'+(st.d?' two':'')+'">'+cal();
+        if(st.d)body+='<div class="mc-slots"><h4>'+label(st.d)+'</h4>'+slots(st.d).map(function(t){return '<button class="mc-t" data-a="time" data-v="'+t+'">'+t+'</button>'}).join('')+'</div>';
+        body+='</div>';
+      }else if(st.step===1){
+        body='<p class="mc-title">Informe seus dados</p><div class="mc-f"><label>Atendimento para<span class="mc-r"><label><input type="radio" name="tipo" value="Adolescente"'+(st.tipo==='Adolescente'?' checked':'')+'> Adolescente</label><label><input type="radio" name="tipo" value="Adulto"'+(st.tipo==='Adulto'?' checked':'')+'> Adulto</label></span></label><label>Nome<input type="text" id="mc-nome" autocomplete="name" value="'+st.nome+'"></label><label>E-mail<input type="email" id="mc-email" autocomplete="email" value="'+st.email+'"></label><p class="mc-err" role="alert">'+st.err+'</p><button class="btn" data-a="ok">Confirmar agendamento</button><button class="mc-link" data-a="back">Voltar</button></div>';
+      }else{
+        body='<div class="mc-ok"><h3>Agendamento solicitado</h3><p>'+st.tipo+' · '+label(st.d)+', '+st.t+' (Brasília)</p><p>Uma confirmação seria enviada para '+st.email.replace(/</g,'&lt;')+'.</p><p class="mc-demo">Visualização de exemplo: nenhum horário foi reservado. Para ativar o calendário real, cole o link do Calendly em CALENDLY_URL.</p></div>';
+      }
+      root.innerHTML='<div class="mc">'+side()+'<div class="mc-main">'+body+'</div></div>';
+    }
+    function read(){var a=root.querySelector('#mc-nome'),b=root.querySelector('#mc-email'),r=root.querySelector('input[name=tipo]:checked');if(a)st.nome=a.value.replace(/[<>"]/g,'');if(b)st.email=b.value.replace(/[<>"]/g,'');if(r)st.tipo=r.value}
+    root.addEventListener('click',function(e){
+      var b=e.target.closest('[data-a]');if(!b)return;var a=b.getAttribute('data-a');read();
+      if(a==='prev'){st.m--;if(st.m<0){st.m=11;st.y--}}
+      else if(a==='next'){st.m++;if(st.m>11){st.m=0;st.y++}}
+      else if(a==='day'){st.d=new Date(st.y,st.m,+b.getAttribute('data-v'))}
+      else if(a==='time'){st.t=b.getAttribute('data-v');st.step=1;st.err=''}
+      else if(a==='back'){st.step=0}
+      else if(a==='ok'){if(!st.nome.trim()||st.email.indexOf('@')<1){st.err='Preencha seu nome e um e-mail válido.';}else{st.step=2;st.err=''}}
+      draw();
+    });
+    draw();
+  }
   var CALENDLY_URL=""; // ← cole aqui o link do Calendly, ex.: "https://calendly.com/seu-usuario/sessao"
   var cal=document.getElementById('calendly');
   if(CALENDLY_URL){
     var f=document.createElement('iframe');
     f.src=CALENDLY_URL+(CALENDLY_URL.indexOf('?')>-1?'&':'?')+'hide_gdpr_banner=1&primary_color=19c995&text_color=091b2b';
     f.title='Agendamento de sessão';f.loading='lazy';cal.appendChild(f);
-  }else{
-    cal.innerHTML='<div class="cal-empty"><p>O calendário de agendamento será exibido aqui.<br>Enquanto isso, agende pelo WhatsApp.</p><a class="btn" href="https://wa.me/qr/HJ52LVUAXB6EF1" target="_blank" rel="noopener">Agendar pelo WhatsApp</a></div>';
-  }
+  }else{mockCalendar(cal)}
   document.getElementById('ano').textContent=new Date().getFullYear();
 })();
 </script>

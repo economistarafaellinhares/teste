@@ -12,7 +12,7 @@
 <style>
 :root{
   --navy:#091B2B; --navy2:#10283E; --navy3:#17344D;
-  --green:#6FB8EE; --mint:#E8F3FC; --white:#FFFFFF;
+  --green:#19C995; --mint:#E6F8F2; --white:#FFFFFF;
   --text:#091B2B; --muted:#52667A; --line:#DCE5EC;
   --r:16px; --max:1080px;
 }
@@ -29,7 +29,7 @@ h3{font-size:1.1rem;letter-spacing:-.01em}
 section{padding:4.5rem 0}
 .lead{color:var(--muted);max-width:62ch}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:.85rem 1.8rem;border-radius:999px;background:var(--green);color:var(--navy);font-weight:600;text-decoration:none;font-size:1rem;border:0;cursor:pointer;transition:background .25s,transform .25s}
-.btn:hover{background:#58A6E0;transform:translateY(-1px)}
+.btn:hover{background:#14b383;transform:translateY(-1px)}
 .btn.full{width:100%}
 
 /* Header */
@@ -58,7 +58,7 @@ nav a:hover{color:#fff}nav a:hover::after{width:100%}
 .logo b{display:block;color:#fff;font-weight:600;font-size:.92rem}
 /* WhatsApp flutuante */
 .wpp{position:fixed;right:max(1rem,env(safe-area-inset-right));bottom:max(1rem,env(safe-area-inset-bottom));z-index:60;width:60px;height:60px;border-radius:50%;background:var(--green);color:var(--navy);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(9,27,43,.28);transition:transform .25s,background .25s}
-.wpp:hover{transform:scale(1.07);background:#58A6E0}
+.wpp:hover{transform:scale(1.07);background:#14b383}
 .wpp svg{width:30px;height:30px}
 /* Agendamento */
 .sched .lead{margin-bottom:1.75rem}
@@ -175,6 +175,32 @@ footer{padding-bottom:5.5rem}
 .photo img{width:auto;max-width:100%;height:auto;margin:0 auto}
 @media (min-width:760px){.hero h1{font-size:clamp(2.6rem,4.6vw,3.6rem)}.destaque h2{font-size:2.5rem}}
 
+/* Ajustes v6: hero com foto em destaque, rodapé de contato */
+.hero{padding:calc(64px + 1.75rem) 0 3rem}
+.hero-grid{grid-template-columns:1fr;grid-template-areas:"title" "photo" "cta";gap:1.5rem;align-items:start}
+.h-title{grid-area:title}.photo{grid-area:photo}.h-cta{grid-area:cta}
+.hero h1{font-size:clamp(1.6rem,7.4vw,3rem);line-height:1.08;white-space:nowrap;margin-bottom:.9rem}
+.photo{position:relative;background:none;border-radius:0;min-height:340px;display:flex;align-items:flex-end;justify-content:center;overflow:visible;width:100%;max-width:380px;margin:0 auto}
+.photo::before{content:"";position:absolute;z-index:0;left:6%;right:6%;bottom:0;top:14%;background:var(--mint);border-radius:28px}
+.photo::after{content:"";position:absolute;z-index:0;left:0;bottom:0;width:34%;height:42%;background:var(--navy);border-radius:0 0 0 28px;clip-path:polygon(0 100%,0 0,100% 100%)}
+.photo img,.photo .mono{position:relative;z-index:1}
+.photo img{width:auto;max-width:100%;height:auto;max-height:600px;margin:0 auto;object-fit:contain}
+.mono{margin:0 0 3rem}
+.hero .btn.full{width:100%}
+.clist{list-style:none;display:grid;gap:.55rem;margin-top:.8rem}
+.foot strong{display:block}
+.foot p{margin-top:.5rem}
+@media (min-width:760px){
+  .hero{padding-top:calc(64px + 3.5rem);padding-bottom:5rem}
+  .hero-grid{grid-template-columns:1.15fr .85fr;grid-template-areas:"title photo" "cta photo";gap:1.25rem 3.5rem;align-items:center}
+  .h-title{align-self:end}.h-cta{align-self:start}
+  .hero h1{font-size:clamp(2.2rem,4.2vw,3.2rem)}
+  .photo{max-width:none;min-height:560px}
+  .photo img{max-height:680px}
+  .hero .btn.full{width:auto}
+  .foot{grid-template-columns:1.3fr 1fr 1fr;gap:2.5rem}
+}
+
 /* Entrada única do topo */
 @keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .hero-grid>*{animation:in .8s ease both}.hero-grid>*:nth-child(2){animation-delay:.15s}
@@ -198,13 +224,13 @@ footer{padding-bottom:5.5rem}
 
 <header>
   <div class="wrap bar">
-    <a class="logo" href="#inicio" aria-label="GM – Giovanna Mayara de Oliveira, página inicial"><span class="gm" aria-hidden="true">GM</span><small><b>Giovanna Mayara de Oliveira</b>Psicóloga clínica · CRP 08/42913</small></a>
+    <a class="logo" href="#inicio" aria-label="GM – Giovanna Mayara de Oliveira, página inicial"><span class="gm" aria-hidden="true">GM</span></a>
     <nav aria-label="Navegação principal">
       <ul>
         <li><a href="#sobre">Sobre mim</a></li>
         <li><a href="#abordagem">Abordagem</a></li>
         <li><a href="#duvidas">Dúvidas</a></li>
-        <li><a href="#agendar">Agendar</a></li>
+        <li><a href="#agendar">Agendamento</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
     </nav>
@@ -222,10 +248,9 @@ footer{padding-bottom:5.5rem}
 <main id="inicio">
 <section class="hero">
   <div class="wrap hero-grid">
-    <div>
-      <h1>Giovanna Mayara de Oliveira</h1>
+    <div class="h-title">
+      <h1>Giovanna Mayara<br>de Oliveira</h1>
       <p class="insc">Psicóloga clínica<br>CRP 08/42913</p>
-      <a class="btn full" href="#agendar">Agendar</a>
     </div>
     <!-- Para usar sua foto: salve o arquivo como "foto-giovanna.jpg" na mesma pasta do index.html.
          A imagem é exibida inteira, sem cortes (object-fit: contain). -->
@@ -233,6 +258,7 @@ footer{padding-bottom:5.5rem}
       <img src="foto-giovanna.jpg" alt="Giovanna Mayara de Oliveira, psicóloga clínica" width="800" height="1000" fetchpriority="high">
       <div class="mono" aria-hidden="true">GM</div>
     </div>
+    <div class="h-cta"><a class="btn full" href="#agendar">Agendar</a></div>
   </div>
 </section>
 
@@ -261,42 +287,48 @@ footer{padding-bottom:5.5rem}
       <details><summary>Como devo me preparar para o atendimento online?</summary><p>Certificar-se de estar em um local apropriado, tranquilo, sigiloso e sem interrupções. Recomenda-se uso de fones de ouvido.</p></details>
       <details><summary>Informações gerais</summary><p>Na primeira sessão, vamos conversar para compreender os motivos que te levaram para a terapia, irei explicar como posso ajudá-lo, e como irá funcionar o processo.</p><p>As sessões ocorrem uma vez na semana ou a cada 15 dias conforme avaliação da psicóloga e tem duração de aproximadamente 50 minutos.</p></details>
     </div>
-    <a class="btn full faqbtn" href="#agendar">Agendar</a>
   </div>
 </section>
 
 <section class="sched" id="agendar">
   <div class="wrap">
-    <h2>Agendar</h2>
+    <h2>Agendamento</h2>
     <!-- CALENDLY: cole o link do seu calendário na constante CALENDLY_URL, no final deste arquivo.
          Exemplo: https://calendly.com/seu-usuario/sessao -->
     <div class="cal" id="calendly"></div>
   </div>
 </section>
 
-<section class="contact" id="contato">
-  <div class="wrap">
-    <h2>Contato</h2>
-    <a class="btn" href="https://wa.me/qr/HJ52LVUAXB6EF1" target="_blank" rel="noopener">Entrar em contato</a>
-  </div>
-</section>
 </main>
 
-<footer>
+<footer id="contato">
   <div class="wrap">
     <div class="foot">
       <div>
-        <span class="gm" aria-hidden="true" style="margin-bottom:1rem">GM</span><br><strong>Giovanna Mayara de Oliveira</strong>
+        <span class="gm" aria-hidden="true" style="margin-bottom:1rem">GM</span><br>
+        <strong>Giovanna Mayara de Oliveira</strong>
         <p>Psicóloga clínica · CRP 08/42913<br>Serviço de psicoterapia on-line para todo o Brasil</p>
-        <!-- Redes sociais: adicione aqui os links, se desejar. -->
+        <a class="btn" href="https://wa.me/qr/HJ52LVUAXB6EF1" target="_blank" rel="noopener" style="margin-top:1.25rem">Entrar em contato</a>
       </div>
-      <ul>
-        <li><a href="#sobre">Sobre mim</a></li>
-        <li><a href="#abordagem">Abordagem</a></li>
-        <li><a href="#duvidas">Dúvidas</a></li>
-        <li><a href="#agendar">Agendar</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
+      <div>
+        <strong>Contato</strong>
+        <!-- EDITE: troque e-mail, telefone e redes sociais pelos dados reais. Apague a linha que não for usar. -->
+        <ul class="clist">
+          <li><a href="mailto:seu-email@exemplo.com">seu-email@exemplo.com</a></li>
+          <li><a href="tel:+5500000000000">(00) 00000-0000</a></li>
+          <li><a href="https://www.instagram.com/SEU_PERFIL" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/in/SEU_PERFIL" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+      <div>
+        <strong>Navegação</strong>
+        <ul class="clist">
+          <li><a href="#sobre">Sobre mim</a></li>
+          <li><a href="#abordagem">Abordagem</a></li>
+          <li><a href="#duvidas">Dúvidas</a></li>
+          <li><a href="#agendar">Agendamento</a></li>
+        </ul>
+      </div>
     </div>
     <p class="copy">© <span id="ano">2026</span> Giovanna Mayara de Oliveira. Todos os direitos reservados.</p>
   </div>
@@ -324,7 +356,7 @@ footer{padding-bottom:5.5rem}
   var cal=document.getElementById('calendly');
   if(CALENDLY_URL){
     var f=document.createElement('iframe');
-    f.src=CALENDLY_URL+(CALENDLY_URL.indexOf('?')>-1?'&':'?')+'hide_gdpr_banner=1&primary_color=6fb8ee&text_color=091b2b';
+    f.src=CALENDLY_URL+(CALENDLY_URL.indexOf('?')>-1?'&':'?')+'hide_gdpr_banner=1&primary_color=19c995&text_color=091b2b';
     f.title='Agendamento de sessão';f.loading='lazy';cal.appendChild(f);
   }else{
     cal.innerHTML='<div class="cal-empty"><p>O calendário de agendamento será exibido aqui.<br>Enquanto isso, agende pelo WhatsApp.</p><a class="btn" href="https://wa.me/qr/HJ52LVUAXB6EF1" target="_blank" rel="noopener">Agendar pelo WhatsApp</a></div>';

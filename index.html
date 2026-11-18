@@ -279,6 +279,12 @@ footer{padding-bottom:5.5rem}
 .sched-note a{color:var(--navy);font-weight:600;text-decoration:underline;text-decoration-color:var(--green);text-decoration-thickness:2px;text-underline-offset:3px}
 @media (min-width:760px){.sched h2{margin-bottom:1rem}.sched .sched-note{margin-bottom:2.75rem}}
 
+/* Ajustes v10: parágrafo contínuo, calendário logo a seguir */
+.sched .sched-note{max-width:none;margin:0 auto 1.25rem;text-wrap:pretty}
+.sched h2{margin-bottom:.75rem}
+.sched .cal{margin-top:0}
+@media (min-width:760px){.sched .sched-note{margin-bottom:1.5rem}.sched h2{margin-bottom:.75rem}}
+
 /* Entrada única do topo */
 @keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .hero-grid>*{animation:in .8s ease both}.hero-grid>*:nth-child(2){animation-delay:.15s}
@@ -368,7 +374,7 @@ footer{padding-bottom:5.5rem}
 <section class="sched alt" id="agendar">
   <div class="wrap">
     <h2>Agendamento</h2>
-    <p class="lead sched-note">Se for a sua primeira sessão, entrarei em contato assim que receber o agendamento para informar o valor da sessão. Se preferir, <a href="https://wa.me/qr/HJ52LVUAXB6EF1" target="_blank" rel="noopener">fale comigo pelo WhatsApp</a>.</p>
+    <p class="lead sched-note">Se for a sua primeira sessão, entrarei em contato assim que receber o agendamento para informar o valor da sessão e confirmar sua participação. Se preferir, <a href="https://wa.me/qr/HJ52LVUAXB6EF1" target="_blank" rel="noopener">fale comigo pelo WhatsApp</a>.</p>
     <!-- CALENDLY: cole o link do seu calendário na constante CALENDLY_URL, no final deste arquivo.
          Exemplo: https://calendly.com/seu-usuario/sessao -->
     <div class="cal" id="calendly"></div>

@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f6f1">
+  <meta name="description" content="Giovanna Mayara de Oliveira - Psicologia e acolhimento.">
+  <title>Giovanna Mayara | Psicóloga</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --fundo: #f7f6f1;
+      --branco: #ffffff;
+      --verde: #718477;
+      --verde-escuro: #40584b;
+      --texto: #343b35;
+      --suave: #e9ede6;
+      --bege: #e9e3d8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      background: var(--fundo);
+      color: var(--texto);
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 22px;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    /* MENU */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 246, 241, .94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(64, 88, 75, .10);
+    }
+
+    .navbar {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      color: var(--verde-escuro);
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .menu a {
+      font-size: .9rem;
+      transition: color .2s;
+    }
+
+    .menu a:hover {
+      color: var(--verde);
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 1.7rem;
+      color: var(--verde-escuro);
+      cursor: pointer;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--verde-escuro);
+      color: white;
+      padding: 15px 25px;
+      border-radius: 40px;
+      font-size: .93rem;
+      font-weight: 600;
+      transition: .25s;
+    }
+
+    .btn:hover {
+      background: var(--verde);
+      transform: translateY(-2px);
+    }
+
+    /* INÍCIO */
+
+    .hero {
+      padding: 85px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.85fr;
+      gap: 75px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--verde);
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      color: var(--verde-escuro);
+      margin-bottom: 25px;
+    }
+
+    .hero-description {
+      max-width: 490px;
+      color: #667168;
+      margin-bottom: 30px;
+      font-size: 1.05rem;
+    }
+
+    .hero-photo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 680px;
+      object-fit: contain;
+      border-radius: 180px 180px 20px 20px;
+    }
+
+    .photo-placeholder {
+      width: 100%;
+      min-height: 380px;
+      border-radius: 180px 180px 20px 20px;
+      background: var(--bege);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: var(--verde-escuro);
+      padding: 30px;
+    }
+
+    /* SEÇÕES */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-light {
+      background: var(--branco);
+    }
+
+    .section-heading {
+      max-width: 680px;
+      margin-bottom: 45px;
+    }
+
+    .section-heading p {
+      color: #737c74;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .about-decoration {
+      background: var(--suave);
+      border-radius: 12px 140px 12px 12px;
+      min-height: 340px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--verde-escuro);
+      padding: 35px;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+    }
+
+    .about-text p {
+      margin-bottom: 18px;
+      color: #667168;
+    }
+
+    /* ATENDIMENTO */
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      padding: 35px;
+      background: white;
+      border: 1px solid #e9eae4;
+      border-radius: 15px;
+      transition: .25s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(50, 70, 55, .07);
+    }
+
+    .service-number {
+      color: var(--verde);
+      font-size: .85rem;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      color: var(--verde-escuro);
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: #737c74;
+    }
+
+    /* FRASE */
+
+    .quote {
+      background: var(--verde-escuro);
+      color: white;
+      text-align: center;
+      padding: 85px 20px;
+    }
+
+    .quote p {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      max-width: 780px;
+      margin: auto;
+      line-height: 1.5;
+    }
+
+    /* CONTATO */
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      color: #737c74;
+      max-width: 550px;
+      margin: 0 auto 30px;
+    }
+
+    .contact .btn {
+      margin-top: 10px;
+    }
+
+    /* RODAPÉ */
+
+    footer {
+      padding: 35px 0;
+      background: #e9ede6;
+      text-align: center;
+      color: #647167;
+      font-size: .85rem;
+    }
+
+    footer p + p {
+      margin-top: 5px;
+    }
+
+    /* WHATSAPP */
+
+    .whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 99;
+      background: #238b5a;
+      color: white;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      box-shadow: 0 5px 20px rgba(0,0,0,.18);
+    }
+
+    /* CELULARES */
+
+    @media (max-width: 760px) {
+      .container {
+        width: 89%;
+      }
+
+      .navbar {
+        min-height: 68px;
+      }
+
+      .logo {
+        font-size: 1.15rem;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .menu {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        width: 100%;
+        padding: 20px 6%;
+        background: var(--fundo);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        box-shadow: 0 12px 20px rgba(0,0,0,.06);
+      }
+
+      .menu.open {
+        display: flex;
+      }
+
+      .menu li a {
+        display: block;
+        padding: 13px 0;
+        border-bottom: 1px solid #e7e8e1;
+      }
+
+      .menu .btn {
+        margin-top: 15px;
+        text-align: center;
+      }
+
+      .hero {
+        padding: 48px 0 65px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .hero-content {
+        text-align: center;
+      }
+
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-photo {
+        width: 100%;
+        max-width: 430px;
+        margin: auto;
+      }
+
+      .hero-photo img {
+        max-height: none;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        border-radius: 100px 100px 15px 15px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .about-decoration {
+        min-height: 220px;
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .service-card {
+        padding: 27px;
+      }
+
+      .quote {
+        padding: 65px 22px;
+      }
+
+      .whatsapp {
+        width: 54px;
+        height: 54px;
+        right: 15px;
+        bottom: 15px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container navbar">
+      <a href="#inicio" class="logo">Giovanna Mayara</a>
+
+      <button class="menu-btn" id="menuBtn"
+        aria-label="Abrir menu" aria-expanded="false"
+        aria-controls="menu">☰</button>
+
+      <ul class="menu" id="menu">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre mim</a></li>
+        <li><a href="#atendimento">Atendimento</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="#contato" class="btn">Agendar conversa</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- INÍCIO -->
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+
+        <div class="hero-content">
+          <div class="eyebrow">Psicologia e acolhimento</div>
+
+          <h1>Um espaço para cuidar de você.</h1>
+
+          <p class="hero-description">
+            Um convite para olhar para si com mais atenção,
+            acolhimento e respeito à sua própria história.
+          </p>
+
+          <a href="#contato" class="btn">
+            Conheça meu atendimento
+          </a>
+        </div>
+
+        <div class="hero-photo">
+          <!-- Coloque a fotografia original nesta pasta
+               com o nome foto-giovanna.jpg.
+               A imagem mantém sua proporção natural. -->
+          <img
+            src="foto-giovanna.jpg"
+            alt="Giovanna Mayara de Oliveira"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+          <div class="photo-placeholder" style="display:none">
+            Adicione aqui a fotografia original da Giovanna.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="section-light" id="sobre">
+      <div class="container about-grid">
+
+        <div class="about-decoration">
+          Cuidar de si também é um caminho.
+        </div>
+
+        <div class="about-text">
+          <div class="eyebrow">Um pouco sobre mim</div>
+
+          <h2>Olá, sou Giovanna Mayara.</h2>
+
+          <p>
+            Sou Giovanna Mayara de Oliveira.
+            Este espaço foi pensado para apresentar meu trabalho
+            e compartilhar informações sobre o atendimento psicológico.
+          </p>
+
+          <p>
+            Aqui você poderá conhecer minha trajetória, minha formação
+            e a maneira como conduzo o trabalho clínico.
+          </p>
+
+          <!-- Substitua pelos dados reais da profissional. -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ATENDIMENTO -->
+    <section id="atendimento">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">Como posso ajudar</div>
+          <h2>Conheça as possibilidades de atendimento.</h2>
+          <p>
+            Informações sobre as modalidades de atendimento
+            e os serviços oferecidos.
+          </p>
+        </div>
+
+        <div class="services">
+
+          <article class="service-card">
+            <div class="service-number">01 — ATENDIMENTO</div>
+            <h3>Psicoterapia</h3>
+            <p>
+              Inclua aqui a descrição da modalidade de psicoterapia,
+              seu público e as informações correspondentes.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-number">02 — MODALIDADE</div>
+            <h3>Atendimento online</h3>
+            <p>
+              Inclua aqui as informações sobre disponibilidade,
+              formato e condições do atendimento online, caso oferecido.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- MENSAGEM -->
+    <div class="quote">
+      <p>
+        “Respeitar sua história é também permitir-se construir
+        novos caminhos.”
+      </p>
+    </div>
+
+    <!-- CONTATO -->
+    <section class="section-light contact" id="contato">
+      <div class="container">
+
+        <div class="eyebrow">Vamos conversar?</div>
+
+        <h2>Seu primeiro passo pode começar aqui.</h2>
+
+        <p>
+          Entre em contato para obter informações sobre o atendimento
+          e verificar a disponibilidade de horários.
+        </p>
+
+        <!-- Substitua pelo WhatsApp profissional -->
+        <a
+          href="https://wa.me/55SEUNUMERO"
+          class="btn"
+          target="_blank"
+          rel="noopener noreferrer">
+          Entrar em contato pelo WhatsApp
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><strong>Giovanna Mayara de Oliveira</strong></p>
+      <p>Psicologia</p>
+      <p>© <span id="year"></span> Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE -->
+  <a
+    href="https://wa.me/55SEUNUMERO"
+    class="whatsapp"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Entrar em contato pelo WhatsApp">
+    ☎
+  </a>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const menu = document.getElementById('menu');
+
+    menuBtn.addEventListener('click', () => {
+      const aberto = menu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', aberto);
+      menuBtn.setAttribute(
+        'aria-label',
+        aberto ? 'Fechar menu' : 'Abrir menu'
+      );
+      menuBtn.textContent = aberto ? '×' : '☰';
+    });
+
+    document.querySelectorAll('#menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.setAttribute('aria-label', 'Abrir menu');
+        menuBtn.textContent = '☰';
+      });
+    });
+
+    document.getElementById('year').textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
